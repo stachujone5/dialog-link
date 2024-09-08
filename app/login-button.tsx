@@ -5,5 +5,5 @@ import { useRouter } from "next/navigation";
 
 export function LoginButton() {
   const router = useRouter();
-  return <Button onClick={() => router.push("?login=true")}>Login</Button>;
+  return <Button onClick={() => router.replace("?login=true")}>Login</Button>;
 }
