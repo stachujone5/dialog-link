@@ -1,9 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 
 export function LoginButton() {
-  const router = useRouter();
-  return <Button onClick={() => router.replace("?login=true")}>Login</Button>;
+  function openLoginDialog() {
+    const params = new URLSearchParams();
+    params.set("login", "true");
+    window.history.pushState(null, "", `?${params.toString()}`);
+  }
+
+  return <Button onClick={openLoginDialog}>Login</Button>;
 }
