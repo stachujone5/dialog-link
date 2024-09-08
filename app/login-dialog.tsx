@@ -1,9 +1,9 @@
 "use client";
 
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useRouter, useSearchParams } from "next/navigation";
 
-export function LoginDialog({ children }: { children: React.ReactNode }) {
+export function LoginDialog() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -22,8 +22,6 @@ export function LoginDialog({ children }: { children: React.ReactNode }) {
         }
       }}
     >
-      <DialogTrigger asChild>{children}</DialogTrigger>
-
       <DialogContent>Login</DialogContent>
     </Dialog>
   );
